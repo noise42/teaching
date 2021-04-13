@@ -1,0 +1,72 @@
+Welcome to the Coding games! 
+Il nostro obiettivo è mettere i candidati di fronte a tipologie di problemi che siamo soliti affrontare e la cui soluzione solitamente non è disponibile. I problemi sono a difficoltà crescente e richiedono la scrittura di 3 funzioni (ed eventualmente altre a corredo) che possano essere prese e testate da noi con gli input specificati.
+
+1. Il nastro rotante
+
+Simuliamo un nastro trasportatore circolare su cui sono posati K oggetti. Il nastro può ruotare sia in senso antiorario che orario.
+Scrivere una funzione che, a partire dalla posizione di partenza sul nastro circolare (modellizzato come un array di qualunque tipo) e l'oggetto a cui voglio arrivare, restituisca il minor numero di rotazioni necessarie ad arrivare all'oggetto finale.
+
+Note: 
+- Ci possono essere più copie dello stesso oggetto
+- Ogni singola rotazione passa all'oggetto successivo
+
+Input e Vincoli:
+0 < K <= 100
+
+Esempio:
+['a','b','c','d','c','f','c',]
+posizione di partenza: 0 ('a')
+oggetto di arrivo: 'c'
+-> numero minimo di rotazioni necessarie: 1
+
+2. Altimetria Relativa
+
+Data una matrice W x H contenente valori di altezza dal livello del mare.
+Scrivere una funzione che restituisca una matrice W x H riempita così:
+- se il punto è un massimo relativo nella matrice di partenza, il valore della nuova matrice sarà un valore intero corrispondente al ranking invertito di tutti i massimi (il massimo più basso avrà valore 1, quello immediatamente più alto valore 2 e così via)
+- se il punto è un minimo relativo nella matrice di partenza, il valore della nuova matrice sarà una valore intero negativo corrispondente al ranking di tutti i minimi (il minimo meno profondo avrà valore -1, quello immediatamente più basso valore -2 e così via)
+- negli altri casi il valore del punto deve essere 0
+
+Note:
+- Il max/min è relativo rispetto a tutti i punti intorno a quello considerato (contare anche quelli in diagonale)
+- un punto è considerato max/min relativo anche se ha accanto un punto alla stessa altezza
+- scegliere e specificare come trattare i bordi
+
+Input e Vincoli:
+numpy array W x H a valori interi positivi, testare per dimensioni massime 100x100
+
+esempio:
+3, 1, 4, 3
+0, 2, 4, 1
+1, 2, 1, 4
+4, 1, 4, 0
+
+output:
+ 1, 0, 2, 0
+-2, 0, 2,-1
+ 0, 0, 0, 2
+ 2,-1, 2,-2
+
+3. Il problema dell'architetto
+
+Data una griglia W x H ed N edifici che possono trovarsi su una qualunque posizione di suddetta griglia:
+scrivere una funzione che restituisca la minima distanza massima di un qualunque punto dal suo edificio più vicino.
+Note:
+- La distanza è considerata come numero di passi in orizzontale o in verticale (movimento in diagonale not allowed).
+
+Input e Vincoli:
+0 < W*H <= 30
+0 < N <= 4
+Esempio:
+W = 4
+H = 5
+N = 3
+
+-> la minima distanza massima è 2, ottenuta nella disposizione:
+0, _, _, _
+_, _, _, 0
+_, _, _, _
+_, _, _, _
+_, 0, _, _
+
+da notare che ci possono essere più configurazioni che soddisfano il requisito di minima distanza massima
